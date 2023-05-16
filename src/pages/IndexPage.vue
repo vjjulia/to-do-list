@@ -15,7 +15,7 @@
     <q-card class="list" color="" flat bordered v-for="(item, index) in lists" :key="index">
       <div class="title">
         <div class="position">
-          <q-radio v-model="item.checked" v-on:click="marca(index)"/>
+          <q-radio v-model="item.shape" v-on:click="marca(index)"/>
         </div>
         {{item.value}}
       </div>
@@ -34,7 +34,7 @@ export default {
       msg: '',
       input: '',
       lists: [],
-      shape: false,
+      shape: '',
     };
   },
 
@@ -44,7 +44,7 @@ export default {
         this.msg = 'A tarefa não pode ser vazia';
       } else {
         this.lists.push({
-          checked: false,
+          shape: false,
           value: this.input,
         });
         this.input = '';
